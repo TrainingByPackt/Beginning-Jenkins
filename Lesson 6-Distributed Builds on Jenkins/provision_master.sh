@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install Java
 sudo yum install java-1.8.0-openjdk -y
 java -version
@@ -10,3 +11,7 @@ sudo yum install jenkins -y
 # Start Jenkins & ensure Jenkins is started at startup
 sudo service jenkins start
 sudo chkconfig jenkins on
+
+# Disable Firewall To Allow Port Forwarding To Host
+# THIS IS NOT RECOMMENDED ON ANY OTHER ENVIRONMENT
+sudo service iptables stop
