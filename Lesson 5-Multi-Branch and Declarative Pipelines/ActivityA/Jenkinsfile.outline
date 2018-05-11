@@ -1,0 +1,28 @@
+node {
+    printMessage("Pipeline Start")
+
+    stage("Fetch Source Code") {
+        git '<enter-repo-URL>'
+    }
+
+    stage("Install Requirements") {
+        sh '<enter makefile command to install requirements>'
+    }
+
+    stage("Run Tests") {
+        sh '<enter makefile command to run tests>'
+    }
+
+    stage("Deploy") {
+        if (env.BRANCH_NAME == "master") {
+            printMessage("")
+        } else {
+            printMessage("")
+        }
+    }
+    printMessage("Pipeline End")
+}
+
+def printMessage(message) {
+    echo "${message}"
+}
