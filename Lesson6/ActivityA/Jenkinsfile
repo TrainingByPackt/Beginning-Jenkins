@@ -1,0 +1,18 @@
+node {
+    stage("Testing Stage") {
+        printMessage("Running Testing Stage")
+        sh 'hostname'
+    }
+}
+
+node('agent') {
+    stage("Testing Stage: Agent") {
+        printMessage("Running Testing Stage On Agent")
+        sh 'hostname'
+    }
+}
+
+def printMessage(message) {
+    echo "${message}"
+}
+

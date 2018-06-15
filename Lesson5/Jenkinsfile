@@ -1,23 +1,25 @@
 node('master') {
-    printMessage('Running Pipeline')
-
     stage("Fetch Source Code") {
-        git 'https://github.com/arnoldokoth/lesson5'
+        git 'https://github.com/TrainingByPackt/Beginning-Continuous-Delivery-With-Jenkins'
     }
 
-    stage("Testing") {
-        sh 'python test_functions.py'
-    }
+    dir('Lesson5') {
+        printMessage('Running Pipeline')
 
-    stage("Deployment") {
-        if (env.BRANCH_NAME == 'master') {
-            printMessage('Deploying the master branch')
-        } else {
-            printMessage('No deployment configured for this branch')
+        stage("Testing") {
+            sh 'python test_functions.py'
         }
-    }
 
-    printMessage('Pipeline Complete')
+        stage("Deployment") {
+            if (env.BRANCH_NAME == 'master') {
+                printMessage('Deploying the master branch')
+            } else {
+                printMessage('No deployment configured for this branch')
+            }
+        }
+
+        printMessage('Pipeline Complete')
+    }
 }
 
 def printMessage(message) {
