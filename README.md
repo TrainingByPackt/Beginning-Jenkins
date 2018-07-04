@@ -1,4 +1,4 @@
-# Beginning-Jenkins
+# Beginning Jenkins
 Code bundles for Beginning Jenkins , published by Packt.
 
 Code Bundles for Courseware on Beginning Jenkins- Joseph Muli and Arnold Okoth
