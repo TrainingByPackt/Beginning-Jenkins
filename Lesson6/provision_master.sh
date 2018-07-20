@@ -13,5 +13,5 @@ sudo service jenkins start
 sudo chkconfig jenkins on
 
 # Disable Firewall To Allow Port Forwarding To Host
-# THIS IS NOT RECOMMENDED ON ANY OTHER ENVIRONMENT
+# THIS IS NOT RECOMMENDED ON ANY OTHER ENVIRONMENT. INSTEAD CREATE RULES FOR TRAFFIC
 sudo service iptables stop
