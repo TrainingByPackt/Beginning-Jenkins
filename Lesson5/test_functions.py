@@ -2,6 +2,7 @@ import unittest
 
 from functions import *
 
+
 class TestFunctions(unittest.TestCase):
     """ Test add_values
     """
