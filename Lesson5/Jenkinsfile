@@ -23,4 +23,3 @@ node('master') {
 def printMessage(message) {
     echo "${message}"
 }
-
